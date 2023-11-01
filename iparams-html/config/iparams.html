@@ -1,0 +1,34 @@
+<html>
+
+<head>
+  <title>Installation Page</title>
+  <link rel="stylesheet" type="text/css" href="./assets/iparams.css">
+  <script defer src="{{{appclient}}}"></script>
+</head>
+
+<body>
+  <div class='form'>
+    <form>
+      <fw-select class="group-field" label="Group" hint-text="shows: support_ticket or deal is subscribed" multiple
+        placeholder="Choose options">
+        <fw-select-option value="opt1">Opt1</fw-select-option>
+        <fw-select-option value="opt2">Opt2</fw-select-option>
+        <fw-select-option value="opt3">Opt3</fw-select-option>
+      </fw-select>
+
+      <fw-input class="email-field" type="email" label="Email" placeholder="Enter your email"
+        description="shows when service-ticket is subscribed" required></fw-input>
+
+      <br>
+      <fw-checkbox class="dark-mode-field" description="should show on all modules declared">Dark
+        Mode</fw-checkbox><br><br>
+
+    </form>
+  </div>
+
+  <script defer src="./assets/iparams.js"></script>
+</body>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@freshworks/crayons@v4/dist/crayons/crayons.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@freshworks/crayons@v4/dist/crayons/crayons.js"></script>
+
+</html>
