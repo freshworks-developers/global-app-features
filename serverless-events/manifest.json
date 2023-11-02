@@ -1,0 +1,46 @@
+{
+  "platform-version": "3.0",
+  "modules": {
+    "common": {
+      "events": {
+        "onAppInstall": {
+          "handler": "onAppInstallHandler"
+        },
+        "onAppUninstall": {
+          "handler": "onAppUninstallHandler"
+        }
+      }
+    },
+    "support_ticket": {
+      "events": {
+        "onTicketCreate": {
+          "handler": "onTicketCreateHandler"
+        },
+        "onTicketUpdate": {
+          "handler": "onTicketUpdateHandlerFreshdesk"
+        }
+      }
+    },
+    "service_ticket": {
+      "events": {
+        "onTicketUpdate": {
+          "handler": "onTicketUpdateHandler"
+        },
+        "onTicketCreate": {
+          "handler": "onTicketCreateHandler"
+        }
+      }
+    },
+    "deal": {
+      "events": {
+        "onDealCreate": {
+          "handler": "onDealCreateHandler"
+        }
+      }
+    }
+  },
+  "engines": {
+    "node": "18.16.1",
+    "fdk": "9.1.0"
+  }
+}

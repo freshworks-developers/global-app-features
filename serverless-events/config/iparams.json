@@ -1,0 +1,25 @@
+{
+  "groups": {
+    "display_name": "groups",
+    "description": "Please enter your groups",
+    "type": "multiselect",
+    "required": true,
+    "modules": ["support_ticket", "deal"],
+    "options": ["opt1", "opt2", "opt3"],
+    "default_value": ["opt1", "opt2"]
+  },
+  "email": {
+    "display_name": "email",
+    "description": "Please enter your email",
+    "type": "email",
+    "required": true,
+    "modules": ["service_ticket"]
+  },
+  "dark_mode": {
+    "display_name": "dark_mode",
+    "description": "Please enter your dark_mode",
+    "type": "checkbox",
+    "required": true,
+    "default_value": true
+  }
+}
