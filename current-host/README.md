@@ -1,20 +1,40 @@
-## Your First App
+## currentHost
 
-This app displays the name of the requester of a freshdesk ticket in the ticket_sidebar placeholder
+This a API provided to the developers to help their apps understand what modules and product APIs an customer/business/account has subscribed to.
 
-### Files and Folders
-    .
-    ├── README.md                 A file for your future self and developer friends to learn about app
-    ├── app                       A folder to place all assets required for frontend components
-    │   ├── index.html            A landing page for the user to use the app
-    │   ├── scripts               JavaScript to place files frontend components business logic
-    │   │   └── app.js
-    │   └── styles                A folder to place all the styles for app
-    │       ├── images
-    │       │   └── icon.svg
-    │       └── style.css
-    ├── config                    A folder to place all the configuration files
-    │   └── iparams.json
-    └── manifest.json             A JSON file holding meta data for app to run on platform
+The code interface:
 
-Explore [more of app sample apps](https://community.developers.freshworks.com/t/freshworks-sample-apps/3604) on the Freshworks github respository.
+```js
+await client.data.get("currentHost");
+```
+
+```json
+"currentHost": {
+    "endpoint_urls": {
+        "freshdesk": "https://name.example.com",
+        "freshsales": "https://name.example.com",
+        "freshservice": "https://name.example.com",
+        "freshworks_crm": "https://name.example.com"
+    },
+    "subscribed_modules": [
+        "support_ticket",
+        "service_ticket",
+        "deal"
+    ]
+}
+```
+
+### What do I need `currentHost` runtime API for?
+
+This modular approach will automatically render your app's UI for the products such as Freshdesk, Freshservice or Freshsales based on the subscribed modules.
+
+- As a developer, you want to control, UI behave differently (eg. Make API calls different). For example, a placholder in Freshdesk vs. placeholder in Freshservice.
+- At runtime you can invoke `client.data.get("currentHost")` to get this information realtime and deduce from `endpoint_urls`.
+
+### Local Simulation
+
+A business using Freshworks might have subscribed to one or more products. If you were to simulate, platform will provides to this selection at `http://localhost:10001/system_settings` (we call it setup page) after `fdk run` comman is issued.
+
+## Debugging
+
+Open `.fdk/localstore` after your inputs are configured at set up page. It has the configuration that FDK will help you test your apps.
